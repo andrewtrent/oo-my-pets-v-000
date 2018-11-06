@@ -77,7 +77,7 @@ class Owner
     self.pets.clear
   end
 
-  def list_pets 
+  def list_pets
     "I have #{self.pets[:fishes].value} fish, #{self.pets[:dogs].value} dog(s), and #{self.pets[:cats].value} cat(s)."
   end
 

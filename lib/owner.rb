@@ -23,7 +23,7 @@ class Owner
   end
 
   def pets_init
-    self.pets = {:fishes => [], :dogs => [], :cats => []}
+    @pets = {:fishes => [], :dogs => [], :cats => []}
   end
 
   def species

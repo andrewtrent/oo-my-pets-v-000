@@ -77,7 +77,7 @@ class Owner
   end
 
   def sell_pets
-    self.pets.each {|critters| make_critters_mood(critters, "nervous")}
+    @pets.each {|critters| make_critters_mood(critters, "nervous")}
     self.pets_init
   end
 

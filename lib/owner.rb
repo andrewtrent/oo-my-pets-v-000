@@ -57,7 +57,7 @@ class Owner
   end
 
   def make_critters_mood(symbol, mood)
-    self.pets[symbol].mood = mood
+    self.pets[symbol].each {|pet| pet.mood = mood}
   end
 
   def walk_dogs

@@ -80,9 +80,6 @@ class Owner
     self.pets.each_key do |critter|
       make_critters_mood(critter, "nervous")
     end
-  #  make_critters_mood(:cats, "nervous")
-  #  make_critters_mood(:fishes, "nervous")
-
     self.pets_init
   end
 

@@ -4,7 +4,7 @@ class Owner
   @@all = []
 
   def self.all
-    @@all.dup
+    @@all
   end
 
   def self.reset_all

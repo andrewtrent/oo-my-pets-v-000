@@ -36,13 +36,6 @@ class Owner
     "I am a #{species}."
   end
 
-
-
-#  def buy_fish(name)
-#    new_fish = Fish.new(name)
-#    self.pets[:fishes] << new_fish
-#  end
-
   def buy_critter(critter, symbol, name)
     new_critter = critter.new(name)
     self.pets[symbol] << new_critter

@@ -42,7 +42,7 @@ class Owner
   def buy_critter(critter, symbol, name)
     new_critter = critter.new(name)
     self.pets[symbol] << new_critter
-  end 
+  end
 
   def buy_fish(name)
     buy_critter(Fish, :fishes, name)
@@ -50,7 +50,7 @@ class Owner
 
   def buy_dog(name)
     buy_critter(Dog, :dogs, name)
-  end 
+  end
 
   def buy_cat(name)
     buy_critter(Cat, :cats, name)
@@ -58,25 +58,28 @@ class Owner
 
   def make_critters_mood(symbol, mood)
     self.pets[symbol].mood = mood
-  end 
+  end
 
   def walk_dogs
     make_critters_mood(:dogs, "happy")
   end
 
-  def play_with_cats 
+  def play_with_cats
     make_critters_mood(:cats, "happy")
-  end 
+  end
 
-  def feed_fish 
+  def feed_fish
     make_critters_mood(:fishes, "happy")
-  end 
+  end
 
-  def sell_pets 
+  def sell_pets
     self.pets.each {|critters| make_critters_mood(critters, "nervous")}
     self.pets.clear
   end
-    
-    
-  
+
+  def list_pets 
+    "I have #{self.pets[:fishes].value} fish, #{self.pets[:dogs].value} dog(s), and #{self.pets[:cats].value} cat(s)."
+  end
+
+
 end

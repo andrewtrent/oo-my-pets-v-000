@@ -26,8 +26,6 @@ class Owner
     @pets = {:fishes => [], :dogs => [], :cats => []}
   end
 
-
-
   def species
     @species.dup.freeze
   end

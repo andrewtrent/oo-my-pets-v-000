@@ -18,7 +18,7 @@ class Owner
   def initialize(name)
     @name = name
     @species = "human"
-    pets_init
+    self.pets_init
     @@all << self
   end
 

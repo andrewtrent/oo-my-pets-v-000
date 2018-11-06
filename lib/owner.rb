@@ -1,5 +1,5 @@
 class Owner
-  attr_accessor :name
+  attr_accessor :name, :pets
 
   @@all = []
 
@@ -26,9 +26,6 @@ class Owner
     @pets = {:fishes => [], :dogs => [], :cats => []}
   end
 
-  def pets=(arg)
-    @pets = arg
-  end
 
 
   def species
@@ -39,9 +36,7 @@ class Owner
     "I am a #{species}."
   end
 
-  def pets
-    @pets
-  end
+
 
 #  def buy_fish(name)
 #    new_fish = Fish.new(name)
@@ -66,7 +61,7 @@ class Owner
   end
 
   def make_critters_mood(symbol, mood)
-    self.pets[symbol].each {|pet| pet.mood = mood}
+    self.pets[symbol].each {|pet| pet.mood = mood} unless
   end
 
   def walk_dogs

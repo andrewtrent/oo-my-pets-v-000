@@ -18,8 +18,12 @@ class Owner
   def initialize(name)
     @name = name
     @species = "human"
-    @pets = {:fishes => [], :dogs => [], :cats => []}
+    pets_init
     @@all << self
+  end
+
+  def pets_init
+    self.pets = {:fishes => [], :dogs => [], :cats => []}
   end
 
   def species

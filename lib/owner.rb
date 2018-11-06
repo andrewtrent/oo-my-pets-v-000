@@ -26,11 +26,57 @@ class Owner
     @species.dup.freeze
   end
 
-  def say_species 
+  def say_species
     puts "I am a #{species}."
+  end
+
+  def pets
+    @pets
+  end
+
+#  def buy_fish(name)
+#    new_fish = Fish.new(name)
+#    self.pets[:fishes] << new_fish
+#  end
+
+  def buy_critter(critter, symbol, name)
+    new_critter = critter.new(name)
+    self.pets[symbol] << new_critter
   end 
 
-  def pets 
-    @pets 
+  def buy_fish(name)
+    buy_critter(Fish, :fishes, name)
   end
+
+  def buy_dog(name)
+    buy_critter(Dog, :dogs, name)
+  end 
+
+  def buy_cat(name)
+    buy_critter(Cat, :cats, name)
+  end
+
+  def make_critters_mood(symbol, mood)
+    self.pets[symbol].mood = mood
+  end 
+
+  def walk_dogs
+    make_critters_mood(:dogs, "happy")
+  end
+
+  def play_with_cats 
+    make_critters_mood(:cats, "happy")
+  end 
+
+  def feed_fish 
+    make_critters_mood(:fishes, "happy")
+  end 
+
+  def sell_pets 
+    self.pets.each {|critters| make_critters_mood(critters, "nervous")}
+    self.pets.clear
+  end
+    
+    
+  
 end
